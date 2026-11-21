@@ -206,7 +206,6 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
         {/* CARD 1: THE HERO CARD (Stamp, Mascot & 3 Interactive Feature Popups) */}
         <div
           data-cursor="inspect"
-          data-cursor-label="DOSSIER"
           className={`cyera-tilt-card lg:col-span-7 p-6 sm:p-8 rounded-2xl border transition-colors flex flex-col justify-between space-y-6 ${cardBg}`}
         >
           <div className="space-y-4">
@@ -289,7 +288,6 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
         {/* CARD 2: THE TELEMETRY HUD & ACOUSTIC LAB TOY CARD */}
         <div
           data-cursor="inspect"
-          data-cursor-label="RADAR"
           className={`cyera-tilt-card lg:col-span-5 p-6 sm:p-8 rounded-2xl border transition-colors flex flex-col justify-between space-y-6 ${cardBg}`}
         >
           {/* Top: Coordinates Vector */}

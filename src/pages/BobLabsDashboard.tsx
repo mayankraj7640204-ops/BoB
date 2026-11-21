@@ -490,7 +490,6 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                       key={s.id}
                       onClick={() => setSelectedSensorId(s.id)}
                       data-cursor="inspect"
-                      data-cursor-label="NODE"
                       onMouseMove={(e) => {
                         const rect = e.currentTarget.getBoundingClientRect();
                         const x = e.clientX - rect.left;
@@ -934,7 +933,6 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 <div
                   key={dev.id}
                   data-cursor="inspect"
-                  data-cursor-label="DEVICE"
                   onMouseMove={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
                     const x = e.clientX - rect.left;

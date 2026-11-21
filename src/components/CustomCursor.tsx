@@ -15,7 +15,6 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ isDarkMode = true })
   const [cursorType, setCursorType] = useState<
     'default' | 'pointer' | 'drag' | 'card' | 'input'
   >('default');
-  const [cursorLabel, setCursorLabel] = useState<string | null>(null);
   const [ripples, setRipples] = useState<ClickRipple[]>([]);
   const [isMouseDown, setIsMouseDown] = useState(false);
 
@@ -59,7 +58,6 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ isDarkMode = true })
         target.isContentEditable
       ) {
         setCursorType('input');
-        setCursorLabel(null);
         return;
       }
 
@@ -67,7 +65,6 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ isDarkMode = true })
       const is3DCanvas = target.closest('canvas') || target.closest('.cursor-grab') || target.closest('#rotunda-container');
       if (is3DCanvas) {
         setCursorType('drag');
-        setCursorLabel('DRAG');
         return;
       }
 
@@ -77,8 +74,6 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ isDarkMode = true })
       ) as HTMLElement | null;
       if (cardTarget) {
         setCursorType('card');
-        const customLabel = cardTarget.getAttribute('data-cursor-label') || 'INSPECT';
-        setCursorLabel(customLabel);
         return;
       }
 
@@ -88,14 +83,11 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ isDarkMode = true })
       ) as HTMLElement | null;
       if (clickable) {
         setCursorType('pointer');
-        const customLabel = clickable.getAttribute('data-cursor-label');
-        setCursorLabel(customLabel || null);
         return;
       }
 
       // Default state
       setCursorType('default');
-      setCursorLabel(null);
     };
 
     const handleMouseDown = () => {
@@ -289,19 +281,6 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ isDarkMode = true })
             <div className="flex items-center space-x-1 font-mono text-[8px] font-bold text-cyan-300 tracking-tighter">
               <span>‹</span>
               <span>›</span>
-            </div>
-          )}
-
-          {/* Contextual Label Pill */}
-          {cursorLabel && cursorType !== 'drag' && (
-            <div
-              className={`absolute top-full mt-2 font-mono text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 rounded shadow-lg backdrop-blur-md whitespace-nowrap transition-all ${
-                isDarkMode
-                  ? 'bg-[#0b0e14]/90 text-indigo-300 border border-indigo-500/30'
-                  : 'bg-white/95 text-indigo-700 border border-indigo-200'
-              }`}
-            >
-              {cursorLabel}
             </div>
           )}
         </div>
