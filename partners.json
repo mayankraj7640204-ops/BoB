@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Amazon",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/f0c8ebfc1aedb7a998db9660b422e814e58ae1a8-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "AT&amp;T",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/92424c340888edb84e1a866a48d2a6f9a0277ed0-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Audi",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/33bc38f664352ab9d5ad5dca6b5e8bd350335497-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Bacardi",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/9106ee747b1c121abec528dae0bd3b8e997b8d8a-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "BetMGM",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/aecae019b9172d3b647d798d28fcbf7f8b0f8455-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "BMW",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/d2ed2c41a495322ff01622c1c5438d3c41e9e841-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Coca Cola",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/94387763ebca6d854c48dda1a76ba924b144faf0-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Comcast",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/577cb103f4f05fe570f1f09d872e4a6ad8ad0944-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Delta",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/5e68ba55432e7594a5aa0e77151d28ccd53bf7ab-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Ebay",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/482f35c942199ee2e30dd1cc3c271bb2a7e7c29e-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "ESPN",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/c2e5274dfddbf9e23e51bc26f37fa8c2b2669cd8-1890x1417.png?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Fanduel",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/db6e1f2de0e4cd79cd8d8da68e42f6e45938304d-1890x1417.png?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Ford",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/226d9d1cc4ea35a4889063314e42ea529b7413f5-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Google",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/5062ca4de003c4bbe95293626d1bfe50ab3ca5fa-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "HP",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/b0765ae086c894ba109ed214e385da83a33e335a-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Lincoln",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/db762ed9a76ece5f64777aca5e7a94484a902408-1890x1417.png?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Lockheed Martin",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/b0d61b29cc77a0ab75a1f79212254f76ed4ef9ac-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Loreal",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/b78a07b18515f2286d9feb086b6bdb654bf26a53-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Mastercard",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/33400157f51f77c769a35ca70d522fb50fecc6ed-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "McDonalds",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/451e69310c1083489bbf3767fa5a81d78eae0191-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  },
+  {
+    "name": "Meta",
+    "logo": "https://cdn.sanity.io/images/vzfsxtpq/production/3c79e71d021fe3234550b4a1ecece3db447cdd18-1080x1080.svg?w=600&amp;fit=max&amp;auto=format"
+  }
+]

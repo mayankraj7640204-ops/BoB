@@ -1,0 +1,229 @@
+[
+  {
+    "client": "Lincoln Navigator",
+    "title": "Waterfall 60",
+    "services": [
+      "VFX"
+    ],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/lincoln-navigator2026-101047/lincoln-waterfalls-preview_540p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/lincoln-navigator2026-101047/lincoln-waterfalls-preview_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/mercedes-holiday---101215/mercedes-holiday-global-version-preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/2c4e607572f312f55b90932bea200efc233971e4-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Mercedes",
+    "title": "Holiday Love",
+    "services": [
+      "VFX"
+    ],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/mercedes-holiday---101215/mercedes-holiday-global-version-preview_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/showreel/preymaker_anthem_2_website_preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/9ef9bbe770adc036d700d96319934b6a9422208a-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Anthem reel vol 2",
+    "title": "Preymaker",
+    "services": [
+      "Original Content",
+      "VFX",
+      "Design",
+      "Color"
+    ],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/showreel/preymaker_anthem_2_website_preview_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/ford---proving-ground-101032/ford_f1_proving_ground_30_preview_540p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/ford---proving-ground-101032/ford_f1_proving_ground_30_preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/85280fd08879f2f899bf9eff96f687f11bc57459-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Ford",
+    "title": "F1 Proving Ground",
+    "services": [
+      "VFX"
+    ],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/ford---proving-ground-101032/ford_f1_proving_ground_30_preview_540p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/ford---proving-ground-101032/ford_f1_proving_ground_30_preview_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/kinder-yes-bueno/kinder-yes-bueno-preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/e6d0a03707b68b1398281c017e5cb750798a2f0b-1920x1080.webp?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Kinder",
+    "title": "Yes Bueno",
+    "services": [
+      "VFX",
+      "Color",
+      "Design"
+    ],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/kinder-yes-bueno/kinder-yes-bueno-preview_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/toyota-into-the-wild/toyota-4runner-60-preview_1_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/toyota-into-the-wild/toyota-4runner-60-preview_1_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/f4d160ebe800cb33c54b694f3933074d142ebb4e-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Toyota",
+    "title": "Into the Wild 60sec",
+    "services": [
+      "VFX",
+      "Color"
+    ],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/toyota-into-the-wild/toyota-4runner-60-preview_1_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/toyota-into-the-wild/toyota-4runner-60-preview_1_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/xfinity-aviators/xfinity-aviators-preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/ae46af65287ab7666648eb661706e8784b6c6307-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Xfinity",
+    "title": "Aviators, the film",
+    "services": [
+      "VFX",
+      "Color"
+    ],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/xfinity-aviators/xfinity-aviators-preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/b17e1cece7e232871607bfdda871826fbb5f7f22-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Lowes",
+    "title": "Walk of Greatness",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/lowes-walk-of-greatness/lowes_website_preview_540p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/lowes-walk-of-greatness/lowes_website_preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/9499ca677908570f2379b3124b56fad207489be6-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Xfinity",
+    "title": "Apple Watch Greek God Group Chat",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/xfinity-greek-god-chat-101156/xfinity_greek_god_group_chat_preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/6108e2ec755ae37123d2c444b58db8980c13a42a-3480x1550.webp?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Preymaker",
+    "title": "Denmark",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/preymaker-denmark/denmark_full_preview_1_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/preymaker-denmark/denmark_full_preview_1_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/c8158761ca42524df83940b141d0244ae8998c3f-3840x2160.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Abbott",
+    "title": "Beast Of Bias",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/abbott-beast-of-bias/abbott-beast-of-bias-preview_540p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/abbott-beast-of-bias/abbott-beast-of-bias-preview_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/coca-cola-it-s-halftime/coca-cola-half-time-preview-v4_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/coca-cola-it-s-halftime/coca-cola-half-time-preview-v4_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/ff5b2dd02b6ed8d55506ba7a699c18fca3b1f767-2824x1584.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Coca Cola",
+    "title": "It&#x27;s Halftime",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/coca-cola-it-s-halftime/coca-cola-half-time-preview-v4_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/coca-cola-it-s-halftime/coca-cola-half-time-preview-v4_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/navy-spotlight/navy-spotlight-preview-v3_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/navy-spotlight/navy-spotlight-preview-v3_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/a204e90d311ebc4ebed714df77aebf9fd5ec64cc-2824x1584.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Navy",
+    "title": "Nuke Campaign",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/navy-spotlight/navy-spotlight-preview-v3_1080p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/navy-spotlight/navy-spotlight-preview-v3_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/a204e90d311ebc4ebed714df77aebf9fd5ec64cc-2824x1584.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Ramp",
+    "title": "Just Fine",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/ramp-just-fine/ramp-just-fine-preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/256b6707248e104e19cd5493e59098332d44e556-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Ford",
+    "title": "Ready",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/ford-ready/ford-ready-preview.-mp4_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/abf4108b946405be0ea4addc010dce16bcdda885-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Delta Airlines",
+    "title": "Altitude 60",
+    "services": [],
+    "videos": [],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/2e3f36f823d9b0a67b18d1ca50f6847822987eb8-1920x1080.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  },
+  {
+    "client": "Lincoln",
+    "title": "Mic Drop",
+    "services": [],
+    "videos": [
+      "https://d2rb54pmpxhpry.cloudfront.net/work/lincoln-mic-drop/lincoln-mic-drop-preview_540p.mp4",
+      "https://d2rb54pmpxhpry.cloudfront.net/work/lincoln-mic-drop/lincoln-mic-drop-preview_1080p.mp4"
+    ],
+    "images": [
+      "https://cdn.sanity.io/images/vzfsxtpq/production/4e78524a992b450be7124230fd629ea240a7784a-2824x1584.jpg?w=1920&amp;fm=webp&amp;q=75"
+    ]
+  }
+]

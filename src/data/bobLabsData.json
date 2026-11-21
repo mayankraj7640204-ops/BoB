@@ -1,0 +1,442 @@
+{
+  "labInfo": {
+    "name": "BOB Labs",
+    "subtitle": "Virtual Testing Lab",
+    "platform": "BOB Labs IoT Virtual Testing Environment",
+    "version": "v2.4.0-prod",
+    "broker": "127.0.0.1:1883",
+    "backendStatus": "Connected",
+    "environment": "Local testing",
+    "mascot": "/images/bob-labs/bob-mascot.jpg",
+    "activeFleetCount": 5,
+    "totalTelemetryDelivered": 1090
+  },
+  "modules": [
+    {
+      "id": "simulation-control",
+      "slug": "simulation-control",
+      "category": "VIRTUAL DEVICE RUNTIME",
+      "title": "Simulation Settings & Control",
+      "description": "Configure the virtual device simulator process, batch publishing interval, and dynamic environmental boundaries for automated test runs.",
+      "image": "/images/bob-labs/simulation-settings.jpg",
+      "ratio": 1.777,
+      "specs": {
+        "deviceCount": 5,
+        "publishingInterval": 2,
+        "minTemp": 16,
+        "maxTemp": 32,
+        "minHumidity": 25,
+        "maxHumidity": 75,
+        "broker": "MQTT 127.0.0.1:1883",
+        "backend": "FastAPI Async Engine"
+      },
+      "tags": ["Simulation", "Fleet Config", "MQTT", "Runtime"]
+    },
+    {
+      "id": "device-monitoring",
+      "slug": "device-monitoring",
+      "category": "LABORATORY / OVERVIEW",
+      "title": "Device Monitoring & Fleet Overview",
+      "description": "Real-time state view of connected virtual sensors. Displays instant temperature, humidity metrics, and streaming heartbeat telemetry.",
+      "image": "/images/bob-labs/device-monitoring.jpg",
+      "ratio": 1.777,
+      "specs": {
+        "activeDevice": "sensor_002",
+        "temp": "21.83 °C",
+        "humidity": "46.87 %",
+        "deviceStatus": "Streaming Live",
+        "sensorsDetected": 5,
+        "sensorsOnline": 5
+      },
+      "tags": ["Telemetry", "Sensors", "Fleet", "Live Stream"]
+    },
+    {
+      "id": "live-telemetry",
+      "slug": "live-telemetry",
+      "category": "SENSOR PERFORMANCE / MQTT",
+      "title": "Temperature Trends & Stream Inspector",
+      "description": "Live telemetry charting and message payload inspector across MQTT topics for individual virtual edge nodes.",
+      "image": "/images/bob-labs/live-telemetry.jpg",
+      "ratio": 1.777,
+      "specs": {
+        "mqttTopic": "bob-labs/devices/sensor_002/telemetry",
+        "reading": "21.83 °C",
+        "messagesReceived": "30+",
+        "lastMessage": "Just now",
+        "transport": "WebSocket / TCP"
+      },
+      "tags": ["Analytics", "MQTT Topic", "Graphs", "Real-Time"]
+    },
+    {
+      "id": "failure-testing",
+      "slug": "failure-testing",
+      "category": "LABORATORY / FAILURE TESTING",
+      "title": "Failure Testing & Chaos Engineering",
+      "description": "Inject controlled faults into virtual IoT devices (Device Offline, Temperature Spike, Missing Messages, Message Delay) to observe downstream resilience.",
+      "image": "/images/bob-labs/failure-testing.jpg",
+      "ratio": 1.777,
+      "specs": {
+        "scenarios": ["Device offline", "Temperature spike", "Missing messages", "Message delay"],
+        "defaultDuration": "30s",
+        "activeFailures": 0,
+        "backendTruth": "Simulator process running"
+      },
+      "tags": ["Chaos Testing", "Fault Injection", "Resilience", "QA"]
+    },
+    {
+      "id": "external-integration",
+      "slug": "external-integration",
+      "category": "LABORATORY / CONNECTORS",
+      "title": "External App Integration & Webhooks",
+      "description": "Connect independent IoT applications to simulator telemetry over HTTP/HTTPS webhooks with real-time delivery monitoring.",
+      "image": "/images/bob-labs/external-integration.jpg",
+      "ratio": 1.777,
+      "specs": {
+        "activeProfile": "Smart Agriculture Demo",
+        "endpoint": "http://127.0.0.1:9000/api/telemetry",
+        "delivered": 1090,
+        "failed": 0,
+        "dropped": 0,
+        "status": "Backend connected"
+      },
+      "tags": ["Integrations", "Webhooks", "Smart Agriculture", "HTTP"]
+    },
+    {
+      "id": "bob-mascot",
+      "slug": "bob-mascot",
+      "category": "AGENTIC HARDWARE LAB",
+      "title": "Meet BOB — Autonomous QA Mascot",
+      "description": "The AI engineer mascot of BOB Labs. Continuously monitors virtual test runs, validates sensor telemetry, and diagnoses edge communications.",
+      "image": "/images/bob-labs/bob-mascot.jpg",
+      "ratio": 1.0,
+      "specs": {
+        "designation": "BOB Builder Bot",
+        "role": "Autonomous IoT Test Operator",
+        "badge": "</>",
+        "status": "Operational"
+      },
+      "tags": ["Mascot", "Autonomous Agent", "AI Engineer", "BOB"]
+    },
+    {
+      "id": "device-fleet-alt",
+      "slug": "device-fleet-alt",
+      "category": "CONNECTED HARDWARE",
+      "title": "Device Fleet Health & Node Diagnostics",
+      "description": "Comprehensive telemetry log from sensor nodes with automated threshold alerts and connection state telemetry.",
+      "image": "/images/bob-labs/device-monitoring-alt.jpg",
+      "ratio": 1.777,
+      "specs": {
+        "sensor001_temp": "22.21 °C",
+        "sensor001_hum": "51.33 %",
+        "sensor002_temp": "21.83 °C",
+        "sensor002_hum": "46.87 %",
+        "broker": "Local 127.0.0.1:1883"
+      },
+      "tags": ["Fleet Health", "Diagnostics", "Sensors", "Hardware"]
+    },
+    {
+      "id": "smart-city-traffic",
+      "slug": "smart-city-traffic",
+      "category": "URBAN MOBILITY / EDGE IOT",
+      "title": "Smart City (Traffic Monitoring)",
+      "description": "Intelligent edge pole camera analyzing real-time urban vehicular traffic density, transit buses, and pedestrian crossings with automated flow optimization.",
+      "image": "/images/bob-labs/smart-city-traffic.jpg",
+      "ratio": 1.25,
+      "specs": {
+        "trafficFlow": "Normal (🟢)",
+        "vehiclesDetected": 1240,
+        "busesTracked": 180,
+        "pedestrians": 320,
+        "edgeInference": "YOLOv8 Edge TPU"
+      },
+      "tags": ["Smart City", "Computer Vision", "Traffic Flow", "Urban IoT"]
+    },
+    {
+      "id": "smart-agriculture-node",
+      "slug": "smart-agriculture-node",
+      "category": "AGRITECH / PRECISION FARMING",
+      "title": "Smart Agriculture (Soil & Crop Telemetry)",
+      "description": "Solar-powered wireless agronomy sensor calculating volumetric soil moisture, ambient temperature, and relative humidity for precision drip irrigation.",
+      "image": "/images/bob-labs/smart-agriculture-node.jpg",
+      "ratio": 0.95,
+      "specs": {
+        "soilMoisture": "68%",
+        "temperature": "28.4 °C",
+        "humidity": "62%",
+        "powerSource": "Monocrystalline Solar + LiFePO4",
+        "protocol": "LoRaWAN 868 MHz"
+      },
+      "tags": ["Agritech", "Precision Farming", "Solar", "Soil Moisture"]
+    },
+    {
+      "id": "predictive-maintenance",
+      "slug": "predictive-maintenance",
+      "category": "INDUSTRY 4.0 / DIAGNOSTICS",
+      "title": "Predictive Maintenance (Motor Vibration)",
+      "description": "Industrial tri-axial accelerometer and thermal transducer mounted to high-load induction pump motors detecting mechanical wear before breakdown.",
+      "image": "/images/bob-labs/predictive-maintenance.jpg",
+      "ratio": 1.25,
+      "specs": {
+        "motorVibration": "Normal (1.2 mm/s)",
+        "operatingTemp": "42.3 °C",
+        "bearingHealth": "98% (Optimal)",
+        "analysisMode": "Fast Fourier Transform (FFT)"
+      },
+      "tags": ["Industry 4.0", "Predictive Maintenance", "Vibration", "Sensors"]
+    },
+    {
+      "id": "healthcare-monitoring",
+      "slug": "healthcare-monitoring",
+      "category": "MEDTECH / WEARABLE IOT",
+      "title": "IoT Healthcare Monitoring",
+      "description": "Continuous vital signs telemetric watch streaming optical heart rate (BPM), blood oxygen saturation (SpO2), body temperature, and daily activity metrics.",
+      "image": "/images/bob-labs/healthcare-monitoring.jpg",
+      "ratio": 2.1,
+      "specs": {
+        "heartRate": "72 bpm (Resting)",
+        "spO2": "98%",
+        "bodyTemp": "36.6 °C",
+        "dailyActivity": "6,240 steps",
+        "encryption": "AES-256 Medical Stream"
+      },
+      "tags": ["Healthcare", "Wearables", "Biometrics", "Telemetry"]
+    },
+    {
+      "id": "smart-building-console",
+      "slug": "smart-building-console",
+      "category": "FACILITY AUTOMATION / HVAC",
+      "title": "Smart Building Automation & Climate",
+      "description": "Centralized touch console and environmental gateway managing commercial office HVAC zones, automated smart lighting, occupancy sensors, and power consumption.",
+      "image": "/images/bob-labs/smart-building-console.jpg",
+      "ratio": 2.2,
+      "specs": {
+        "zoneTemperature": "24 °C",
+        "lightingStatus": "Daylight Auto-Dimming",
+        "acZone": "Active (Eco 22°C)",
+        "occupancy": "65% Capacity",
+        "energyEfficiency": "Grade A+ (BREEAM)"
+      },
+      "tags": ["Smart Building", "Automation", "HVAC", "Energy Efficiency"]
+    },
+    {
+      "id": "asset-tracking",
+      "slug": "asset-tracking",
+      "category": "SUPPLY CHAIN / LOGISTICS",
+      "title": "IoT Asset Tracking & Cold-Chain",
+      "description": "Rechargeable cellular/GNSS telemetry tag with multi-axis impact accelerometer and temperature logger protecting high-value transit cargo.",
+      "image": "/images/bob-labs/asset-tracking.jpg",
+      "ratio": 2.2,
+      "specs": {
+        "shipmentLocation": "In Transit (Route 4B)",
+        "ambientTemp": "23.8 °C",
+        "shockImpact": "OK (0.12 G)",
+        "batteryReserve": "87%",
+        "geofenceStatus": "Inside Delivery Corridor"
+      },
+      "tags": ["Logistics", "Cold Chain", "Asset Tracking", "GNSS"]
+    },
+    {
+      "id": "industrial-iiot-factory",
+      "slug": "industrial-iiot-factory",
+      "category": "MANUFACTURING / INDUSTRIAL IOT",
+      "title": "Connected IIoT Smart Factory & Gateway",
+      "description": "Enterprise Industrial IoT facility connecting industrial gateways, multi-sensor pump telemetry, and touch dashboards to central cloud intelligence.",
+      "image": "/images/bob-labs/industrial-iiot-factory.jpg",
+      "ratio": 1.5,
+      "specs": {
+        "gatewayStatus": "Online (Ethernet/Cellular)",
+        "motorHealth": "98%",
+        "operatingTemp": "42.3 °C",
+        "vibrationRMS": "1.8 mm/s",
+        "cloudBridge": "MQTT 1883 • TLS 1.3"
+      },
+      "tags": ["IIoT", "Smart Factory", "Edge Gateway", "Industrial"]
+    },
+    {
+      "id": "fire-hacker-mascot",
+      "slug": "fire-hacker-mascot",
+      "category": "SECURITY / CHAOS INJECTION",
+      "title": "BOB Chaos Hacker — Stress Testing Bot",
+      "description": "The fiery mascot of BOB Labs' chaos engineering team. Specializes in injecting packet delays, buffer overflows, and offline drops to ensure system robustness.",
+      "image": "/images/bob-labs/fire-hacker-mascot.jpg",
+      "ratio": 0.9,
+      "specs": {
+        "codename": "Blaze Hacker",
+        "role": "Chaos Test Specialist",
+        "favoriteFault": "Network Partition",
+        "sunglasses": "Ray-Ban Cyberpunk",
+        "status": "Ready to Inject Faults"
+      },
+      "tags": ["Mascot", "Chaos Engineering", "Pen-Testing", "Fault Injection"]
+    },
+    {
+      "id": "bits2wave-timer",
+      "slug": "bits2wave-timer",
+      "category": "HACKATHON / MISSION CLOCK",
+      "title": "BITS2WAVE 24-Hour Mission Clock",
+      "description": "The official 24-hour hackathon countdown projection of BITS2WAVE. Tracks developer build sprints, commit cadence, and sprint delivery milestones.",
+      "image": "/images/bob-labs/bits2wave-timer.jpg",
+      "ratio": 1.33,
+      "specs": {
+        "event": "BITS2WAVE Hackathon",
+        "timeRemaining": "23:59:05",
+        "motto": "Stay in the flow. Make every moment yours.",
+        "milestone": "Prototyping & Edge Integration"
+      },
+      "tags": ["BITS2WAVE", "Hackathon", "Countdown", "Sprint"]
+    },
+    {
+      "id": "bits2wave-aura999",
+      "slug": "bits2wave-aura999",
+      "category": "INNOVATION / TEAM SHOWCASE",
+      "title": "Team AURA 999+ • BITS2WAVE Arena",
+      "description": "Official team banner at BITS2WAVE: 'Build • Launch • Break • Repeat'. Sponsored by IEEE AP-S, MTT-S, and BMSIT Student Branch Chapter.",
+      "image": "/images/bob-labs/bits2wave-aura999.jpg",
+      "ratio": 2.6,
+      "specs": {
+        "team": "AURA 999+",
+        "mantra": "Build • Launch • Break • Repeat",
+        "chapters": "IEEE AP-S & MTT-S BMSIT",
+        "focusArea": "Virtual IoT Testing & Autonomous Agents"
+      },
+      "tags": ["Team Aura", "BITS2WAVE", "IEEE", "Hackathon"]
+    },
+    {
+      "id": "bits2wave-lab-entrance",
+      "slug": "bits2wave-lab-entrance",
+      "category": "TESTING FACILITY / LAB ARENA",
+      "title": "BITS2WAVE Hardware Testing & Innovation Lab",
+      "description": "Entrance to the hardware testing arena where developers validate edge firmware, MQTT bridges, and sensor nodes under real load.",
+      "image": "/images/bob-labs/bits2wave-lab-entrance.jpg",
+      "ratio": 0.75,
+      "specs": {
+        "venue": "BITS2WAVE Lab Hall",
+        "decor": "TNT Innovation Crates",
+        "capacity": "150 Hackers & Engineers",
+        "network": "Gigabit WiFi 6E + MQTT Testbed"
+      },
+      "tags": ["Lab Entrance", "BITS2WAVE", "Testbed", "Hardware Arena"]
+    },
+    {
+      "id": "arduino-controller",
+      "slug": "arduino-controller",
+      "category": "HARDWARE CORE / EMBEDDED",
+      "title": "Open-Hardware Microcontroller Edge Node",
+      "description": "Microcontroller development board providing digital GPIOs, ADC sampling, and SPI/I2C sensor buses connected to the BOB Labs test harness.",
+      "image": "/images/bob-labs/arduino-controller.jpg",
+      "ratio": 1.25,
+      "specs": {
+        "architecture": "AVR / ARM Cortex Edge",
+        "clock": "16 MHz - 48 MHz",
+        "gpioCount": "14 Digital + 6 Analog",
+        "firmware": "BOB Labs Sensor Node v2.4"
+      },
+      "tags": ["Arduino", "Embedded", "Microcontroller", "Hardware"]
+    },
+    {
+      "id": "temp-humidity-sensor",
+      "slug": "temp-humidity-sensor",
+      "category": "SENSORS / TELEMETRY",
+      "title": "Ambient Micro-Climate Sensor Node",
+      "description": "High-accuracy capacitive polymer humidity and bandgap temperature sensor streaming micro-climate telemetry over low-power wireless.",
+      "image": "/images/bob-labs/temp-humidity-sensor.png",
+      "ratio": 1.0,
+      "specs": {
+        "accuracyTemp": "±0.2 °C",
+        "accuracyHumidity": "±1.8 %RH",
+        "wireless": "WiFi 2.4GHz / BLE 5.2",
+        "sampleRate": "1 Hz Telemetry Cadence"
+      },
+      "tags": ["Sensor", "Temperature", "Humidity", "IoT Node"]
+    },
+    {
+      "id": "smart-cctv-camera",
+      "slug": "smart-cctv-camera",
+      "category": "EDGE AI / COMPUTER VISION",
+      "title": "AI Vision Edge Surveillance Camera",
+      "description": "IP67 weather-sealed intelligent surveillance camera featuring on-device neural network processing for object recognition and motion telemetry.",
+      "image": "/images/bob-labs/smart-cctv-camera.jpg",
+      "ratio": 1.0,
+      "specs": {
+        "resolution": "4K HDR (30 FPS)",
+        "lens": "120° Wide Angle",
+        "onDeviceAI": "Object & Person Detection",
+        "streaming": "RTSP / WebRTC Stream"
+      },
+      "tags": ["Camera", "Vision AI", "Surveillance", "Edge AI"]
+    },
+    {
+      "id": "analytics-console",
+      "slug": "analytics-console",
+      "category": "ANALYTICS / DASHBOARD",
+      "title": "Real-Time Mission Analytics Console",
+      "description": "Real-time telemetry analytics console providing live time-series wave plots, distribution pie charts, and anomaly detection alerts.",
+      "image": "/images/bob-labs/analytics-console.jpg",
+      "ratio": 1.25,
+      "specs": {
+        "engine": "HTML5 Canvas & WebGL",
+        "latency": "< 45 ms",
+        "charts": "Time-Series, Pie, Bar Distributions",
+        "exportFormat": "JSON, CSV, Parquet"
+      },
+      "tags": ["Analytics", "Console", "Charts", "Mission Control"]
+    }
+  ],
+  "deviceFleet": [
+    {
+      "id": "sensor_001",
+      "name": "sensor_001",
+      "type": "Ambient Weather Sensor",
+      "temperature": 22.21,
+      "humidity": 51.33,
+      "status": "active",
+      "lastReading": "Just now",
+      "topic": "bob-labs/devices/sensor_001/telemetry",
+      "messages": 34
+    },
+    {
+      "id": "sensor_002",
+      "name": "sensor_002",
+      "type": "Precision Lab Node",
+      "temperature": 21.83,
+      "humidity": 46.87,
+      "status": "active",
+      "lastReading": "Just now",
+      "topic": "bob-labs/devices/sensor_002/telemetry",
+      "messages": 41
+    },
+    {
+      "id": "sensor_003",
+      "name": "sensor_003",
+      "type": "Smart Agriculture Node",
+      "temperature": 28.4,
+      "humidity": 62.0,
+      "status": "active",
+      "lastReading": "Just now",
+      "topic": "bob-labs/devices/sensor_003/telemetry",
+      "messages": 88
+    },
+    {
+      "id": "sensor_004",
+      "name": "sensor_004",
+      "type": "Smart City Traffic Node",
+      "temperature": 26.5,
+      "humidity": 55.2,
+      "status": "active",
+      "lastReading": "Just now",
+      "topic": "bob-labs/devices/sensor_004/telemetry",
+      "messages": 124
+    },
+    {
+      "id": "sensor_005",
+      "name": "sensor_005",
+      "type": "Predictive Motor Sensor",
+      "temperature": 42.3,
+      "humidity": 38.6,
+      "status": "active",
+      "lastReading": "Just now",
+      "topic": "bob-labs/devices/sensor_005/telemetry",
+      "messages": 195
+    }
+  ]
+}
