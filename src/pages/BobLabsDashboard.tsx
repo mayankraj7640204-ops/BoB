@@ -420,14 +420,14 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 <div>
                   <div className="flex items-center space-x-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="font-mono text-xs uppercase tracking-widest text-emerald-400 font-bold">
+                    <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-bold">
                       SYSTEM STATUS: FULLY OPERATIONAL
                     </span>
                   </div>
-                  <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight mt-1 font-sans">
+                  <h1 className={`text-2xl md:text-4xl font-extrabold tracking-tight mt-1 font-sans ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                     BOB Labs Mission Control
                   </h1>
-                  <p className="text-sm text-slate-400 mt-1 max-w-2xl font-sans">
+                  <p className={`text-sm mt-1 max-w-2xl font-sans ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                     Real-time hardware emulation harness, multi-topic MQTT pub/sub streaming, and
                     continuous chaos verification for IoT edge nodes.
                   </p>
@@ -440,7 +440,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                     }`}
                   >
                     <span className="text-[10px] text-slate-500 uppercase block">ACTIVE THREADS</span>
-                    <span className="text-lg font-bold text-indigo-400">{sensors.length} Nodes</span>
+                    <span className={`text-lg font-bold ${isDarkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>{sensors.length} Nodes</span>
                   </div>
 
                   <div
@@ -449,7 +449,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                     }`}
                   >
                     <span className="text-[10px] text-slate-500 uppercase block">DELIVERED TELEMETRY</span>
-                    <span className="text-lg font-bold text-emerald-400">{deliveredCount.toLocaleString()} pkts</span>
+                    <span className={`text-lg font-bold ${isDarkMode ? 'text-emerald-400' : 'text-emerald-600'}`}>{deliveredCount.toLocaleString()} pkts</span>
                   </div>
 
                   <button
@@ -523,10 +523,10 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           <img
                             src={photos[idx % photos.length]}
                             alt={s.name}
-                            className="w-11 h-11 rounded-xl object-cover border border-white/10 bg-slate-900"
+                            className={`w-11 h-11 rounded-xl object-cover border ${isDarkMode ? 'border-white/10 bg-slate-900' : 'border-slate-200 bg-slate-100'}`}
                           />
                           <div>
-                            <span className="font-mono text-xs font-bold text-white block">{s.name}</span>
+                            <span className={`font-mono text-xs font-bold block ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{s.name}</span>
                             <span className="text-[11px] text-slate-400 block">{s.type}</span>
                           </div>
                         </div>
@@ -536,7 +536,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                         </span>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-white/5 font-mono text-xs">
+                      <div className={`grid grid-cols-2 gap-3 mt-4 pt-3 border-t font-mono text-xs ${isDarkMode ? 'border-white/5' : 'border-slate-200'}`}>
                         <div>
                           <span className="text-[10px] text-slate-400 uppercase block">TEMPERATURE</span>
                           <span className="text-base font-bold text-amber-400">{s.temperature} °C</span>
@@ -649,7 +649,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                   isDarkMode ? 'bg-[#0d121f]/90 border-white/10' : 'bg-white border-slate-200'
                 }`}
               >
-                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <div className={`flex items-center justify-between pb-4 border-b mb-6 ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}>
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
                       VIRTUAL DEVICE RUNTIME
@@ -665,14 +665,18 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs font-sans">
                   {/* Device Count Stepper */}
-                  <div className="p-4 rounded-xl border border-white/5 bg-slate-900/30">
-                    <label className="block font-bold mb-1 text-slate-300 font-mono">
+                  <div className={`p-4 rounded-xl border ${isDarkMode ? 'border-white/5 bg-slate-900/30' : 'border-slate-200 bg-slate-50'}`}>
+                    <label className={`block font-bold mb-1 font-mono ${isDarkMode ? 'text-slate-300' : 'text-slate-800'}`}>
                       Virtual Device Count
                     </label>
                     <div className="flex items-center space-x-3 mt-2">
                       <button
                         onClick={() => setDeviceCount((c) => Math.max(1, c - 1))}
-                        className="w-9 h-9 rounded-lg border border-white/10 bg-slate-800 text-lg font-bold flex items-center justify-center hover:bg-slate-700"
+                        className={`w-9 h-9 rounded-lg border text-lg font-bold flex items-center justify-center transition-colors ${
+                          isDarkMode
+                            ? 'border-white/10 bg-slate-800 text-white hover:bg-slate-700'
+                            : 'border-slate-300 bg-white text-slate-800 hover:bg-slate-100 shadow-2xs'
+                        }`}
                       >
                         -
                       </button>
@@ -682,11 +686,19 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                         max="50"
                         value={deviceCount}
                         onChange={(e) => setDeviceCount(Math.max(1, parseInt(e.target.value) || 1))}
-                        className="w-24 text-center py-1.5 rounded-lg border border-white/10 bg-slate-900 text-base font-bold font-mono text-indigo-400"
+                        className={`w-24 text-center py-1.5 rounded-lg border text-base font-bold font-mono ${
+                          isDarkMode
+                            ? 'border-white/10 bg-slate-900 text-indigo-400'
+                            : 'border-slate-300 bg-white text-indigo-600 shadow-2xs'
+                        }`}
                       />
                       <button
                         onClick={() => setDeviceCount((c) => Math.min(50, c + 1))}
-                        className="w-9 h-9 rounded-lg border border-white/10 bg-slate-800 text-lg font-bold flex items-center justify-center hover:bg-slate-700"
+                        className={`w-9 h-9 rounded-lg border text-lg font-bold flex items-center justify-center transition-colors ${
+                          isDarkMode
+                            ? 'border-white/10 bg-slate-800 text-white hover:bg-slate-700'
+                            : 'border-slate-300 bg-white text-slate-800 hover:bg-slate-100 shadow-2xs'
+                        }`}
                       >
                         +
                       </button>
@@ -697,8 +709,8 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                   </div>
 
                   {/* Publishing Interval */}
-                  <div className="p-4 rounded-xl border border-white/5 bg-slate-900/30">
-                    <label className="block font-bold mb-1 text-slate-300 font-mono">
+                  <div className={`p-4 rounded-xl border ${isDarkMode ? 'border-white/5 bg-slate-900/30' : 'border-slate-200 bg-slate-50'}`}>
+                    <label className={`block font-bold mb-1 font-mono ${isDarkMode ? 'text-slate-300' : 'text-slate-800'}`}>
                       Publishing Interval (Cadence)
                     </label>
                     <div className="flex items-center space-x-3 mt-2">
@@ -710,7 +722,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                         onChange={(e) => setPubInterval(parseInt(e.target.value) || 2)}
                         className="w-full accent-indigo-500"
                       />
-                      <span className="font-mono text-base font-bold text-indigo-400 w-12 text-right">
+                      <span className="font-mono text-base font-bold text-indigo-500 w-12 text-right">
                         {pubInterval}s
                       </span>
                     </div>
@@ -720,9 +732,9 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                   </div>
 
                   {/* Temperature Boundaries */}
-                  <div className="p-4 rounded-xl border border-white/5 bg-slate-900/30">
-                    <label className="block font-bold mb-2 text-slate-300 font-mono flex items-center space-x-2">
-                      <Thermometer className="w-4 h-4 text-amber-400" />
+                  <div className={`p-4 rounded-xl border ${isDarkMode ? 'border-white/5 bg-slate-900/30' : 'border-slate-200 bg-slate-50'}`}>
+                    <label className={`block font-bold mb-2 font-mono flex items-center space-x-2 ${isDarkMode ? 'text-slate-300' : 'text-slate-800'}`}>
+                      <Thermometer className="w-4 h-4 text-amber-500" />
                       <span>Environmental Temp Range</span>
                     </label>
                     <div className="grid grid-cols-2 gap-3">
@@ -732,7 +744,9 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           type="number"
                           value={minTemp}
                           onChange={(e) => setMinTemp(parseInt(e.target.value) || 0)}
-                          className="w-full px-3 py-1.5 rounded-lg border border-white/10 bg-slate-900 font-mono text-sm font-bold text-amber-400"
+                          className={`w-full px-3 py-1.5 rounded-lg border font-mono text-sm font-bold text-amber-500 ${
+                            isDarkMode ? 'border-white/10 bg-slate-900' : 'border-slate-300 bg-white shadow-2xs'
+                          }`}
                         />
                       </div>
                       <div>
@@ -741,16 +755,18 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           type="number"
                           value={maxTemp}
                           onChange={(e) => setMaxTemp(parseInt(e.target.value) || 40)}
-                          className="w-full px-3 py-1.5 rounded-lg border border-white/10 bg-slate-900 font-mono text-sm font-bold text-amber-400"
+                          className={`w-full px-3 py-1.5 rounded-lg border font-mono text-sm font-bold text-amber-500 ${
+                            isDarkMode ? 'border-white/10 bg-slate-900' : 'border-slate-300 bg-white shadow-2xs'
+                          }`}
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Humidity Boundaries */}
-                  <div className="p-4 rounded-xl border border-white/5 bg-slate-900/30">
-                    <label className="block font-bold mb-2 text-slate-300 font-mono flex items-center space-x-2">
-                      <Droplets className="w-4 h-4 text-cyan-400" />
+                  <div className={`p-4 rounded-xl border ${isDarkMode ? 'border-white/5 bg-slate-900/30' : 'border-slate-200 bg-slate-50'}`}>
+                    <label className={`block font-bold mb-2 font-mono flex items-center space-x-2 ${isDarkMode ? 'text-slate-300' : 'text-slate-800'}`}>
+                      <Droplets className="w-4 h-4 text-cyan-500" />
                       <span>Relative Humidity Range</span>
                     </label>
                     <div className="grid grid-cols-2 gap-3">
@@ -760,7 +776,9 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           type="number"
                           value={minHum}
                           onChange={(e) => setMinHum(parseInt(e.target.value) || 0)}
-                          className="w-full px-3 py-1.5 rounded-lg border border-white/10 bg-slate-900 font-mono text-sm font-bold text-cyan-400"
+                          className={`w-full px-3 py-1.5 rounded-lg border font-mono text-sm font-bold text-cyan-500 ${
+                            isDarkMode ? 'border-white/10 bg-slate-900' : 'border-slate-300 bg-white shadow-2xs'
+                          }`}
                         />
                       </div>
                       <div>
@@ -769,7 +787,9 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           type="number"
                           value={maxHum}
                           onChange={(e) => setMaxHum(parseInt(e.target.value) || 100)}
-                          className="w-full px-3 py-1.5 rounded-lg border border-white/10 bg-slate-900 font-mono text-sm font-bold text-cyan-400"
+                          className={`w-full px-3 py-1.5 rounded-lg border font-mono text-sm font-bold text-cyan-500 ${
+                            isDarkMode ? 'border-white/10 bg-slate-900' : 'border-slate-300 bg-white shadow-2xs'
+                          }`}
                         />
                       </div>
                     </div>
@@ -777,7 +797,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 </div>
 
                 {/* Simulation Action Controls */}
-                <div className="mt-6 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                <div className={`mt-6 pt-6 border-t flex flex-wrap items-center justify-between gap-4 ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}>
                   <div className="flex items-center space-x-3 font-mono text-xs">
                     <span
                       className={`w-3 h-3 rounded-full ${
@@ -822,34 +842,34 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                   isDarkMode ? 'bg-[#0d121f]/90 border-white/10' : 'bg-white border-slate-200'
                 }`}
               >
-                <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+                <div className={`flex items-center justify-between pb-3 border-b mb-4 ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}>
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-400">
                     BACKEND ENGINE STATUS
                   </span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-500">
                     FastAPI
                   </span>
                 </div>
 
                 <div className="space-y-4 font-mono text-xs">
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+                  <div className={`p-3.5 rounded-xl border ${isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'}`}>
                     <span className="text-[10px] text-slate-500 uppercase block">SIMULATOR PROCESS ID</span>
-                    <span className="text-base font-bold text-indigo-400">{pid ? `PID #${pid}` : 'None'}</span>
+                    <span className="text-base font-bold text-indigo-500">{pid ? `PID #${pid}` : 'None'}</span>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+                  <div className={`p-3.5 rounded-xl border ${isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'}`}>
                     <span className="text-[10px] text-slate-500 uppercase block">ENGINE UPTIME</span>
-                    <span className="text-base font-bold text-emerald-400">{simUptime} seconds</span>
+                    <span className="text-base font-bold text-emerald-500">{simUptime} seconds</span>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+                  <div className={`p-3.5 rounded-xl border ${isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'}`}>
                     <span className="text-[10px] text-slate-500 uppercase block">MQTT INGRESS BUFFER</span>
-                    <span className="text-base font-bold text-white">100% (Zero Drops)</span>
+                    <span className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>100% (Zero Drops)</span>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+                  <div className={`p-3.5 rounded-xl border ${isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'}`}>
                     <span className="text-[10px] text-slate-500 uppercase block">TRANSPORT LAYER</span>
-                    <span className="text-sm font-bold text-cyan-400">TCP / TLS 1.3 / WebSocket</span>
+                    <span className="text-sm font-bold text-cyan-500">TCP / TLS 1.3 / WebSocket</span>
                   </div>
                 </div>
               </div>
@@ -961,35 +981,39 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                     <img
                       src={dev.img}
                       alt={dev.name}
-                      className="w-14 h-14 rounded-xl object-cover border border-white/10 bg-slate-950"
+                      className={`w-14 h-14 rounded-xl object-cover border ${isDarkMode ? 'border-white/10 bg-slate-950' : 'border-slate-200 bg-slate-100'}`}
                     />
                     <div>
-                      <span className="font-mono text-sm font-bold text-white block">{dev.name}</span>
+                      <span className={`font-mono text-sm font-bold block ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{dev.name}</span>
                       <span className="text-xs text-slate-400 block">{dev.title}</span>
-                      <span className="text-[10px] font-mono text-emerald-400 mt-0.5 block">● Online (MQTT)</span>
+                      <span className="text-[10px] font-mono text-emerald-500 mt-0.5 block">● Online (MQTT)</span>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 p-3 rounded-xl bg-slate-900/60 border border-white/5 font-mono text-xs">
+                  <div className={`grid grid-cols-2 gap-3 p-3 rounded-xl border font-mono text-xs ${
+                    isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                  }`}>
                     <div>
                       <span className="text-[10px] text-slate-400 uppercase block">TEMP</span>
-                      <span className="text-base font-bold text-amber-400">{dev.temp}</span>
+                      <span className="text-base font-bold text-amber-500">{dev.temp}</span>
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-400 uppercase block">HUMIDITY</span>
-                      <span className="text-base font-bold text-cyan-400">{dev.hum}</span>
+                      <span className="text-base font-bold text-cyan-500">{dev.hum}</span>
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-400 uppercase block">SIGNAL</span>
-                      <span className="font-semibold text-emerald-400">{dev.rssi}</span>
+                      <span className="font-semibold text-emerald-500">{dev.rssi}</span>
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-400 uppercase block">POWER</span>
-                      <span className="font-semibold text-indigo-400">{dev.battery}</span>
+                      <span className="font-semibold text-indigo-500">{dev.battery}</span>
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-white/10 flex justify-between items-center text-[10px] font-mono text-slate-400">
+                  <div className={`mt-4 pt-3 border-t flex justify-between items-center text-[10px] font-mono ${
+                    isDarkMode ? 'border-white/10 text-slate-400' : 'border-slate-200 text-slate-500'
+                  }`}>
                     <span className="truncate max-w-[180px]">{dev.topic}</span>
                     <button
                       onClick={() => onNavigateTab('telemetry')}
@@ -1017,8 +1041,8 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 }`}
               >
                 <span className="text-[10px] font-mono uppercase text-slate-500 block">SELECTED NODE</span>
-                <span className="text-lg font-bold font-mono text-white mt-1 block">{activeSensor.name}</span>
-                <span className="text-[10px] text-emerald-400 font-mono">● 1.0 Hz Ingress Rate</span>
+                <span className={`text-lg font-bold font-mono mt-1 block ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{activeSensor.name}</span>
+                <span className="text-[10px] text-emerald-500 font-mono">● 1.0 Hz Ingress Rate</span>
               </div>
 
               <div
@@ -1062,7 +1086,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 isDarkMode ? 'bg-[#0d121f]/90 border-white/10' : 'bg-white border-slate-200'
               }`}
             >
-              <div className="flex flex-wrap items-center justify-between pb-4 border-b border-white/10 mb-4 gap-3">
+              <div className={`flex flex-wrap items-center justify-between pb-4 border-b mb-4 gap-3 ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}>
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
                     HIGH-RESOLUTION OSCILLOSCOPE
@@ -1100,7 +1124,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                       .join(' ')}
                   />
                 </svg>
-                <div className="flex justify-between text-[11px] font-mono text-slate-500 mt-3 pt-2 border-t border-white/5">
+                <div className={`flex justify-between text-[11px] font-mono mt-3 pt-2 border-t ${isDarkMode ? 'text-slate-500 border-white/5' : 'text-slate-500 border-slate-200'}`}>
                   <span>-30s Historical Window</span>
                   <span>Topic: {activeSensor.topic}</span>
                   <span>Latest: {activeSensor.temperature} °C</span>
@@ -1114,22 +1138,26 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 isDarkMode ? 'bg-[#0d121f]/90 border-white/10' : 'bg-white border-slate-200'
               }`}
             >
-              <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+              <div className={`flex items-center justify-between pb-3 border-b mb-4 ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}>
                 <div>
                   <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider">
                     PAYLOAD INGESTION FEED
                   </span>
-                  <h3 className="text-base font-bold font-sans">Live MQTT Telemetry Stream</h3>
+                  <h3 className={`text-base font-bold font-sans ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Live MQTT Telemetry Stream</h3>
                 </div>
-                <span className="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-indigo-400 font-bold">
+                <span className={`text-xs font-mono px-2.5 py-1 rounded font-bold ${
+                  isDarkMode ? 'bg-slate-800 text-indigo-400' : 'bg-slate-100 text-indigo-600 border border-slate-200'
+                }`}>
                   {telemetryLogs.length} Packets Captured
                 </span>
               </div>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs font-mono">
+                <table className={`w-full text-left text-xs font-mono ${isDarkMode ? '' : 'text-slate-800'}`}>
                   <thead>
-                    <tr className="border-b border-white/10 text-slate-400 text-[11px]">
+                    <tr className={`border-b text-[11px] ${
+                      isDarkMode ? 'border-white/10 text-slate-400' : 'border-slate-200 text-slate-600 bg-slate-50/80'
+                    }`}>
                       <th className="py-2.5 px-3">TOPIC</th>
                       <th className="py-2.5 px-3">NODE ID</th>
                       <th className="py-2.5 px-3">TEMP (°C)</th>
@@ -1139,11 +1167,11 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                       <th className="py-2.5 px-3">TIMESTAMP</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/5">
+                  <tbody className={`divide-y ${isDarkMode ? 'divide-white/5' : 'divide-slate-200'}`}>
                     {telemetryLogs.map((log) => (
-                      <tr key={log.id} className="hover:bg-white/5 transition-colors">
-                        <td className="py-2.5 px-3 text-indigo-400 font-semibold">{log.topic}</td>
-                        <td className="py-2.5 px-3 font-bold text-white">{log.device}</td>
+                      <tr key={log.id} className={`transition-colors ${isDarkMode ? 'hover:bg-white/5' : 'hover:bg-slate-50'}`}>
+                        <td className="py-2.5 px-3 text-indigo-500 font-semibold">{log.topic}</td>
+                        <td className={`py-2.5 px-3 font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{log.device}</td>
                         <td className="py-2.5 px-3 font-bold text-amber-400">{log.temp} °C</td>
                         <td className="py-2.5 px-3 font-bold text-cyan-400">{log.hum} %</td>
                         <td className="py-2.5 px-3">
@@ -1217,7 +1245,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                   isDarkMode ? 'bg-[#0d121f]/90 border-white/10' : 'bg-white border-slate-200'
                 }`}
               >
-                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <div className={`flex items-center justify-between pb-4 border-b mb-6 ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}>
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
                       FAULT CATALOG
@@ -1278,18 +1306,18 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                       >
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center space-x-2.5">
-                            <div className="p-2 rounded-xl bg-white/5 border border-white/10">
+                            <div className={`p-2 rounded-xl border ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-white border-slate-200 shadow-2xs'}`}>
                               {sc.icon}
                             </div>
-                            <span className="font-bold text-sm text-white font-sans">{sc.title}</span>
+                            <span className={`font-bold text-sm font-sans ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{sc.title}</span>
                           </div>
                         </div>
 
-                        <p className="text-xs text-slate-400 mt-2 font-sans leading-relaxed">
+                        <p className={`text-xs mt-2 font-sans leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                           {sc.desc}
                         </p>
 
-                        <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                        <div className={`mt-4 pt-3 border-t flex items-center justify-between ${isDarkMode ? 'border-white/5' : 'border-slate-200'}`}>
                           <span
                             className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold border ${sc.badgeColor}`}
                           >
@@ -1299,7 +1327,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                             className={`w-4 h-4 rounded-full border flex items-center justify-center ${
                               isSelected
                                 ? 'border-indigo-500 bg-indigo-500'
-                                : 'border-white/20 bg-transparent'
+                                : isDarkMode ? 'border-white/20 bg-transparent' : 'border-slate-300 bg-transparent'
                             }`}
                           >
                             {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
@@ -1311,12 +1339,12 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 </div>
 
                 {/* Duration Slider with Presets */}
-                <div className="mt-8 p-5 rounded-2xl border border-white/5 bg-[#090d16]/60">
+                <div className={`mt-8 p-5 rounded-2xl border ${isDarkMode ? 'border-white/5 bg-[#090d16]/60' : 'border-slate-200 bg-slate-50'}`}>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                    <label className="font-mono text-xs font-bold text-slate-300">
+                    <label className={`font-mono text-xs font-bold ${isDarkMode ? 'text-slate-300' : 'text-slate-800'}`}>
                       Injection Duration & Recovery Window
                     </label>
-                    <span className="font-mono text-sm font-bold text-indigo-400 px-3 py-1 rounded bg-indigo-500/10 border border-indigo-500/20">
+                    <span className="font-mono text-sm font-bold text-indigo-500 px-3 py-1 rounded bg-indigo-500/10 border border-indigo-500/20">
                       {failureDuration} SECONDS
                     </span>
                   </div>
@@ -1328,11 +1356,11 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                     step="5"
                     value={failureDuration}
                     onChange={(e) => setFailureDuration(parseInt(e.target.value) || 30)}
-                    className="w-full h-2 rounded-lg bg-slate-800 accent-indigo-500 cursor-pointer mt-2"
+                    className="w-full h-2 rounded-lg bg-slate-700 accent-indigo-500 cursor-pointer mt-2"
                   />
 
                   {/* Preset Pills */}
-                  <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-white/5 font-mono text-[11px]">
+                  <div className={`flex flex-wrap gap-2 mt-4 pt-3 border-t font-mono text-[11px] ${isDarkMode ? 'border-white/5' : 'border-slate-200'}`}>
                     <span className="text-slate-500 self-center mr-1">Presets:</span>
                     {[10, 30, 60, 120, 180].map((sec) => (
                       <button
@@ -1340,8 +1368,10 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                         onClick={() => setFailureDuration(sec)}
                         className={`px-2.5 py-1 rounded-md border transition-all ${
                           failureDuration === sec
-                            ? 'bg-indigo-600 text-white border-indigo-500 font-bold'
-                            : 'bg-white/5 text-slate-400 border-white/10 hover:text-white'
+                            ? 'bg-indigo-600 text-white border-indigo-500 font-bold shadow-xs'
+                            : isDarkMode
+                            ? 'bg-white/5 text-slate-400 border-white/10 hover:text-white'
+                            : 'bg-white text-slate-700 border-slate-300 hover:text-slate-900 shadow-2xs'
                         }`}
                       >
                         {sec}s
@@ -1351,9 +1381,9 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 </div>
 
                 {/* Interactive Target Fleet Selector */}
-                <div className="mt-6 p-5 rounded-2xl border border-white/5 bg-[#090d16]/60">
+                <div className={`mt-6 p-5 rounded-2xl border ${isDarkMode ? 'border-white/5 bg-[#090d16]/60' : 'border-slate-200 bg-slate-50'}`}>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-xs font-bold text-slate-300">
+                    <span className={`font-mono text-xs font-bold ${isDarkMode ? 'text-slate-300' : 'text-slate-800'}`}>
                       Target Devices ({targetedSensors.length} of {sensors.length} selected)
                     </span>
                     <button
@@ -1362,7 +1392,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           targetedSensors.length === sensors.length ? ['sensor_001'] : sensors.map((s) => s.id)
                         )
                       }
-                      className="text-[11px] font-mono text-indigo-400 hover:text-white"
+                      className="text-[11px] font-mono text-indigo-500 hover:text-indigo-700 font-semibold"
                     >
                       {targetedSensors.length === sensors.length ? 'Deselect All' : 'Select All Fleet'}
                     </button>
@@ -1377,8 +1407,12 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           onClick={() => toggleTargetSensor(s.id)}
                           className={`p-3 rounded-xl border font-mono text-xs cursor-pointer transition-all flex items-center justify-between ${
                             isTargeted
-                              ? 'bg-rose-500/10 border-rose-500/40 text-white'
-                              : 'bg-white/5 border-white/10 text-slate-400 opacity-60'
+                              ? isDarkMode
+                                ? 'bg-rose-500/10 border-rose-500/40 text-white'
+                                : 'bg-rose-50 border-rose-300 text-rose-900 shadow-2xs'
+                              : isDarkMode
+                              ? 'bg-white/5 border-white/10 text-slate-400 opacity-60'
+                              : 'bg-white border-slate-200 text-slate-700 opacity-80 shadow-2xs'
                           }`}
                         >
                           <div className="flex items-center space-x-2 truncate">
@@ -1390,7 +1424,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           </div>
                           <span
                             className={`w-3.5 h-3.5 rounded-md border flex items-center justify-center ${
-                              isTargeted ? 'bg-rose-500 border-rose-500' : 'border-white/20'
+                              isTargeted ? 'bg-rose-500 border-rose-500' : isDarkMode ? 'border-white/20' : 'border-slate-300'
                             }`}
                           >
                             {isTargeted && <CheckCircle2 className="w-3 h-3 text-white" />}
@@ -1426,7 +1460,11 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                       setInjectionCountdown(0);
                       setActiveFailureNotice(null);
                     }}
-                    className="px-4 py-4 rounded-xl border border-white/10 hover:bg-white/5 text-slate-400 hover:text-white font-mono text-xs font-bold"
+                    className={`px-4 py-4 rounded-xl border font-mono text-xs font-bold transition-colors ${
+                      isDarkMode
+                        ? 'border-white/10 hover:bg-white/5 text-slate-400 hover:text-white'
+                        : 'border-slate-300 hover:bg-slate-100 text-slate-600 hover:text-slate-900 shadow-2xs'
+                    }`}
                     title="Reset faults"
                   >
                     <RotateCcw className="w-4 h-4" />
@@ -1442,18 +1480,18 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                     isDarkMode ? 'bg-[#0d121f]/90 border-white/10' : 'bg-white border-slate-200'
                   }`}
                 >
-                  <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+                  <div className={`flex items-center justify-between pb-3 border-b mb-4 ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}>
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-400">
                       SYSTEM RESILIENCE
                     </span>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-500">
                       GRADE A+
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between mt-2">
                     <div>
-                      <span className="text-3xl font-extrabold font-mono text-white">
+                      <span className={`text-3xl font-extrabold font-mono ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                         {failureStats.resilienceScore}%
                       </span>
                       <span className="text-xs text-slate-400 block mt-0.5">Automated Recovery Index</span>
@@ -1467,7 +1505,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           r="26"
                           stroke="currentColor"
                           strokeWidth="5"
-                          className="text-slate-800"
+                          className={isDarkMode ? "text-slate-800" : "text-slate-200"}
                           fill="none"
                         />
                         <circle
@@ -1483,7 +1521,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                           strokeLinecap="round"
                         />
                       </svg>
-                      <Gauge className="w-6 h-6 text-indigo-400 absolute" />
+                      <Gauge className="w-6 h-6 text-indigo-500 absolute" />
                     </div>
                   </div>
                 </div>
@@ -1499,29 +1537,39 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                   </span>
 
                   <div className="space-y-3 font-mono text-xs">
-                    <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 flex justify-between items-center">
-                      <span className="text-slate-400">Delayed Telemetry</span>
-                      <span className="font-bold text-amber-400">{failureStats.delayed} pkts</span>
+                    <div className={`p-3 rounded-xl border flex justify-between items-center ${
+                      isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                    }`}>
+                      <span className={isDarkMode ? "text-slate-400" : "text-slate-600"}>Delayed Telemetry</span>
+                      <span className="font-bold text-amber-500">{failureStats.delayed} pkts</span>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 flex justify-between items-center">
-                      <span className="text-slate-400">Recovered / Released</span>
-                      <span className="font-bold text-emerald-400">{failureStats.released} pkts</span>
+                    <div className={`p-3 rounded-xl border flex justify-between items-center ${
+                      isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                    }`}>
+                      <span className={isDarkMode ? "text-slate-400" : "text-slate-600"}>Recovered / Released</span>
+                      <span className="font-bold text-emerald-500">{failureStats.released} pkts</span>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 flex justify-between items-center">
-                      <span className="text-slate-400">Dropped Ingress</span>
-                      <span className="font-bold text-rose-400">{failureStats.dropped} pkts</span>
+                    <div className={`p-3 rounded-xl border flex justify-between items-center ${
+                      isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                    }`}>
+                      <span className={isDarkMode ? "text-slate-400" : "text-slate-600"}>Dropped Ingress</span>
+                      <span className="font-bold text-rose-500">{failureStats.dropped} pkts</span>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 flex justify-between items-center">
-                      <span className="text-slate-400">Mean Time to Detect (MTTD)</span>
-                      <span className="font-bold text-cyan-400">{failureStats.mttd}</span>
+                    <div className={`p-3 rounded-xl border flex justify-between items-center ${
+                      isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                    }`}>
+                      <span className={isDarkMode ? "text-slate-400" : "text-slate-600"}>Mean Time to Detect (MTTD)</span>
+                      <span className="font-bold text-cyan-500">{failureStats.mttd}</span>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 flex justify-between items-center">
-                      <span className="text-slate-400">Mean Time to Recover (MTTR)</span>
-                      <span className="font-bold text-purple-400">{failureStats.mttr}</span>
+                    <div className={`p-3 rounded-xl border flex justify-between items-center ${
+                      isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                    }`}>
+                      <span className={isDarkMode ? "text-slate-400" : "text-slate-600"}>Mean Time to Recover (MTTR)</span>
+                      <span className="font-bold text-purple-500">{failureStats.mttr}</span>
                     </div>
                   </div>
                 </div>
@@ -1564,56 +1612,62 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                   isDarkMode ? 'bg-[#0d121f]/90 border-white/10' : 'bg-white border-slate-200'
                 }`}
               >
-                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <div className={`flex items-center justify-between pb-4 border-b mb-6 ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}>
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
                       APPLICATION PROFILES & WEBHOOKS
                     </span>
-                    <h3 className="text-xl font-bold font-sans mt-0.5">Active Connectors</h3>
+                    <h3 className={`text-xl font-bold font-sans mt-0.5 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Active Connectors</h3>
                   </div>
-                  <button className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-xs font-bold">
+                  <button className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-xs font-bold transition-all shadow-xs">
                     + New Integration
                   </button>
                 </div>
 
                 {/* Smart Agriculture Demo Profile Card */}
-                <div className="p-6 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden">
+                <div className={`p-6 rounded-2xl border relative overflow-hidden ${
+                  isDarkMode ? 'border-white/10 bg-slate-900/60' : 'border-slate-200 bg-slate-50'
+                }`}>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-400 flex items-center justify-center font-bold text-xl">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl ${
+                        isDarkMode ? 'bg-indigo-500/20 border border-indigo-500/40 text-indigo-400' : 'bg-indigo-100 border border-indigo-200 text-indigo-700'
+                      }`}>
                         S
                       </div>
                       <div>
-                        <h4 className="font-bold text-base text-white font-sans">
+                        <h4 className={`font-bold text-base font-sans ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                           Smart Agriculture Demo
                         </h4>
-                        <span className="font-mono text-xs text-slate-400 block mt-0.5">
+                        <span className={`font-mono text-xs block mt-0.5 ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                           http://127.0.0.1:9000/api/telemetry
                         </span>
                       </div>
                     </div>
 
-                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/20 text-emerald-500 border border-emerald-500/30">
                       ● Active & Healthy
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-4 border-t border-white/10 font-mono text-xs">
+                  <div className={`grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-4 border-t font-mono text-xs ${
+                    isDarkMode ? 'border-white/10' : 'border-slate-200'
+                  }`}>
                     <div>
                       <span className="text-[10px] text-slate-500 uppercase block">DELIVERED</span>
-                      <span className="text-base font-bold text-emerald-400">{webhookDelivered}</span>
+                      <span className="text-base font-bold text-emerald-500">{webhookDelivered}</span>
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-500 uppercase block">FAILED</span>
-                      <span className="text-base font-bold text-slate-400">0</span>
+                      <span className={`text-base font-bold ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>0</span>
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-500 uppercase block">DROPPED</span>
-                      <span className="text-base font-bold text-slate-400">0</span>
+                      <span className={`text-base font-bold ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>0</span>
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-500 uppercase block">AVG LATENCY</span>
-                      <span className="text-base font-bold text-indigo-400">32 ms</span>
+                      <span className="text-base font-bold text-indigo-500">32 ms</span>
                     </div>
                   </div>
                 </div>
@@ -1621,30 +1675,38 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 {/* Create an Integration Form */}
                 <form
                   onSubmit={handleCreateIntegration}
-                  className="mt-8 pt-6 border-t border-white/10 space-y-4 text-xs font-sans"
+                  className={`mt-8 pt-6 border-t space-y-4 text-xs font-sans ${isDarkMode ? 'border-white/10' : 'border-slate-200'}`}
                 >
-                  <h4 className="font-bold text-sm text-slate-200 uppercase tracking-wider font-mono">
+                  <h4 className={`font-bold text-sm uppercase tracking-wider font-mono ${isDarkMode ? 'text-slate-200' : 'text-slate-800'}`}>
                     Create New Telemetry Bridge
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-slate-400 font-mono mb-1">Application Name</label>
+                      <label className={`block font-mono mb-1 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>Application Name</label>
                       <input
                         type="text"
                         placeholder="e.g. Operations Grafana Bridge"
                         value={newAppName}
                         onChange={(e) => setNewAppName(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-slate-900 font-mono text-xs focus:ring-2 focus:ring-indigo-500"
+                        className={`w-full px-3.5 py-2.5 rounded-xl border font-mono text-xs focus:ring-2 focus:ring-indigo-500 ${
+                          isDarkMode
+                            ? 'border-white/10 bg-slate-900 text-white placeholder-slate-500'
+                            : 'border-slate-300 bg-white text-slate-900 placeholder-slate-400 shadow-2xs'
+                        }`}
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 font-mono mb-1">HTTP / Webhook Target</label>
+                      <label className={`block font-mono mb-1 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>HTTP / Webhook Target</label>
                       <input
                         type="url"
                         placeholder="https://analytics.example.com/api/v1/stream"
                         value={newEndpoint}
                         onChange={(e) => setNewEndpoint(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-slate-900 font-mono text-xs focus:ring-2 focus:ring-indigo-500"
+                        className={`w-full px-3.5 py-2.5 rounded-xl border font-mono text-xs focus:ring-2 focus:ring-indigo-500 ${
+                          isDarkMode
+                            ? 'border-white/10 bg-slate-900 text-white placeholder-slate-500'
+                            : 'border-slate-300 bg-white text-slate-900 placeholder-slate-400 shadow-2xs'
+                        }`}
                       />
                     </div>
                   </div>
@@ -1656,7 +1718,7 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                     Save & Test Integration
                   </button>
                   {integrationSuccess && (
-                    <span className="text-emerald-400 font-mono text-xs ml-4">
+                    <span className="text-emerald-500 font-mono text-xs ml-4">
                       ✓ Integration verified and saved successfully!
                     </span>
                   )}
@@ -1674,24 +1736,32 @@ export const BobLabsDashboard: React.FC<BobLabsDashboardProps> = ({
                 </span>
 
                 <div className="space-y-4 font-mono text-xs">
-                  <div className="p-4 rounded-xl bg-slate-900/60 border border-white/5">
+                  <div className={`p-4 rounded-xl border ${
+                    isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                  }`}>
                     <span className="text-[10px] text-slate-500 uppercase block">NETWORK SECURITY</span>
-                    <span className="font-bold text-emerald-400 mt-1 block">TLS 1.3 / HMAC-SHA256</span>
+                    <span className="font-bold text-emerald-500 mt-1 block">TLS 1.3 / HMAC-SHA256</span>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-900/60 border border-white/5">
+                  <div className={`p-4 rounded-xl border ${
+                    isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                  }`}>
                     <span className="text-[10px] text-slate-500 uppercase block">RETRY POLICY</span>
-                    <span className="font-bold text-white mt-1 block">Exponential Backoff (3x)</span>
+                    <span className={`font-bold mt-1 block ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Exponential Backoff (3x)</span>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-900/60 border border-white/5">
+                  <div className={`p-4 rounded-xl border ${
+                    isDarkMode ? 'bg-slate-900/60 border-white/5' : 'bg-slate-50 border-slate-200'
+                  }`}>
                     <span className="text-[10px] text-slate-500 uppercase block">DELIVERY HISTOGRAM</span>
                     <div className="flex items-end space-x-1 h-16 mt-3 pt-2">
                       {[40, 65, 30, 85, 95, 75, 90, 60, 100, 80, 90, 95].map((val, i) => (
                         <div
                           key={i}
                           style={{ height: `${val}%` }}
-                          className="flex-1 bg-indigo-500/40 rounded-t hover:bg-indigo-400 transition-colors"
+                          className={`flex-1 rounded-t transition-colors ${
+                            isDarkMode ? 'bg-indigo-500/40 hover:bg-indigo-400' : 'bg-indigo-400/60 hover:bg-indigo-500'
+                          }`}
                         />
                       ))}
                     </div>

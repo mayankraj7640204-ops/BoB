@@ -256,29 +256,33 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ isDarkMode = true })
             cursorType === 'pointer'
               ? isDarkMode
                 ? 'border-2 border-indigo-400 bg-indigo-500/15 shadow-[0_0_20px_rgba(99,102,241,0.5)]'
-                : 'border-2 border-indigo-600 bg-indigo-500/10 shadow-[0_0_16px_rgba(99,102,241,0.35)]'
+                : 'border-2 border-indigo-600 bg-indigo-600/15 shadow-[0_0_16px_rgba(79,70,229,0.4)]'
               : cursorType === 'drag'
-              ? 'border-2 border-cyan-400 bg-cyan-500/15 shadow-[0_0_22px_rgba(6,182,212,0.5)]'
+              ? isDarkMode
+                ? 'border-2 border-cyan-400 bg-cyan-500/15 shadow-[0_0_22px_rgba(6,182,212,0.5)]'
+                : 'border-2 border-cyan-600 bg-cyan-600/15 shadow-[0_0_18px_rgba(8,145,178,0.4)]'
               : cursorType === 'card'
-              ? 'border-2 border-indigo-400/90 bg-indigo-500/10 shadow-[0_0_18px_rgba(99,102,241,0.4)]'
+              ? isDarkMode
+                ? 'border-2 border-indigo-400/90 bg-indigo-500/10 shadow-[0_0_18px_rgba(99,102,241,0.4)]'
+                : 'border-2 border-indigo-600/90 bg-indigo-600/15 shadow-[0_0_16px_rgba(79,70,229,0.3)]'
               : isDarkMode
               ? 'border border-indigo-400/50 bg-indigo-500/5 shadow-[0_0_12px_rgba(99,102,241,0.25)]'
-              : 'border border-indigo-500/60 bg-indigo-500/5 shadow-[0_0_10px_rgba(99,102,241,0.2)]'
+              : 'border-2 border-indigo-600/70 bg-indigo-600/10 shadow-[0_0_12px_rgba(79,70,229,0.25)]'
           }`}
         >
           {/* Micro HUD Crosshair Ticks on Card Hover */}
           {cursorType === 'card' && (
             <>
-              <span className="absolute -top-1 font-mono text-[8px] text-indigo-400 leading-none">+</span>
-              <span className="absolute -bottom-1 font-mono text-[8px] text-indigo-400 leading-none">+</span>
-              <span className="absolute -left-1 font-mono text-[8px] text-indigo-400 leading-none">+</span>
-              <span className="absolute -right-1 font-mono text-[8px] text-indigo-400 leading-none">+</span>
+              <span className={`absolute -top-1 font-mono text-[8px] leading-none ${isDarkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>+</span>
+              <span className={`absolute -bottom-1 font-mono text-[8px] leading-none ${isDarkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>+</span>
+              <span className={`absolute -left-1 font-mono text-[8px] leading-none ${isDarkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>+</span>
+              <span className={`absolute -right-1 font-mono text-[8px] leading-none ${isDarkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>+</span>
             </>
           )}
 
           {/* Orbit Navigation Chevrons on 3D Rotunda */}
           {cursorType === 'drag' && (
-            <div className="flex items-center space-x-1 font-mono text-[8px] font-bold text-cyan-300 tracking-tighter">
+            <div className={`flex items-center space-x-1 font-mono text-[8px] font-bold tracking-tighter ${isDarkMode ? 'text-cyan-300' : 'text-cyan-600'}`}>
               <span>‹</span>
               <span>›</span>
             </div>
@@ -306,10 +310,10 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ isDarkMode = true })
             isMouseDown ? 'scale-150' : 'scale-100'
           } ${
             cursorType === 'pointer'
-              ? 'bg-white shadow-[0_0_8px_#ffffff]'
+              ? isDarkMode ? 'bg-white shadow-[0_0_8px_#ffffff]' : 'bg-indigo-600 shadow-[0_0_8px_rgba(79,70,229,0.6)]'
               : cursorType === 'drag'
-              ? 'bg-cyan-300 shadow-[0_0_8px_#67e8f9]'
-              : 'bg-indigo-400 shadow-[0_0_6px_#818cf8]'
+              ? isDarkMode ? 'bg-cyan-300 shadow-[0_0_8px_#67e8f9]' : 'bg-cyan-600 shadow-[0_0_8px_rgba(8,145,178,0.6)]'
+              : isDarkMode ? 'bg-indigo-400 shadow-[0_0_6px_#818cf8]' : 'bg-indigo-600 shadow-[0_0_6px_rgba(79,70,229,0.5)]'
           }`}
         />
       </div>
