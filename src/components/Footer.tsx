@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenHelp }) => {
           </p>
 
           <p className="text-[11px] text-[#6b7076]">
-            Forged at BITS2WAVE Hackathon 2024 by Team AURA 999+ (IEEE BMSIT Student Branch Chapter).
+            Forged at BITS2WAVE Hackathon 2026 by Team AURA 999+ (IEEE BMSIT Student Branch Chapter).
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenHelp }) => {
 
       {/* Bottom Bar */}
       <div className="max-w-[1600px] mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#6b7076] gap-4">
-        <p>© 2026 BOB Labs. All rights reserved. BITS2WAVE Hackathon 2024 • Team AURA 999+.</p>
+        <p>© 2026 BOB Labs. All rights reserved. BITS2WAVE Hackathon 2026 • Team AURA 999+.</p>
         <div className="flex space-x-6">
           <span className="hover:text-white cursor-pointer">Privacy Policy</span>
           <span className="hover:text-white cursor-pointer">Terms of Service</span>

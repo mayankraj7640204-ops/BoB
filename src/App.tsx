@@ -154,7 +154,7 @@ export function App() {
               <span className="font-semibold text-slate-700 dark:text-slate-300">
                 BOB Labs IoT Virtual Testing Laboratory
               </span>
-              <span className="text-slate-500">• BITS2WAVE Hackathon 2024 • Team AURA 999+</span>
+              <span className="text-slate-500">• BITS2WAVE Hackathon 2026 • Team AURA 999+</span>
             </div>
 
             <div className="flex items-center space-x-4">

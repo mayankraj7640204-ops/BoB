@@ -335,7 +335,7 @@ export const AboutOverlay: React.FC<AboutOverlayProps> = ({
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-[11px] font-mono uppercase tracking-wider">
                     <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-                    <span>BITS2WAVE HACKATHON 2024</span>
+                    <span>BITS2WAVE HACKATHON 2026</span>
                   </span>
                   <span className="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-[11px] font-mono uppercase tracking-wider">
                     TEAM AURA 999+
@@ -646,7 +646,7 @@ export const AboutOverlay: React.FC<AboutOverlayProps> = ({
                   <h3 className="text-sm font-mono text-indigo-400 uppercase tracking-wider">
                     // THE RECORD: RELEASES & MILESTONES
                   </h3>
-                  <span className="text-xs font-mono text-slate-400">ON FILE: 2024–PRESENT</span>
+                  <span className="text-xs font-mono text-slate-400">ON FILE: 2026–PRESENT</span>
                 </div>
 
                 <div className="overflow-x-auto">
@@ -661,25 +661,25 @@ export const AboutOverlay: React.FC<AboutOverlayProps> = ({
                     </thead>
                     <tbody className="divide-y divide-white/5 text-slate-300">
                       <tr>
-                        <td className="py-3.5 pr-4 text-indigo-400">2024</td>
+                        <td className="py-3.5 pr-4 text-indigo-400">2026</td>
                         <td className="py-3.5 pr-4 text-white font-medium">BITS2WAVE Hackathon</td>
                         <td className="py-3.5 pr-4 text-slate-400">Team AURA 999+ · Core IoT Engine</td>
                         <td className="py-3.5 text-emerald-400">Championship Contender</td>
                       </tr>
                       <tr>
-                        <td className="py-3.5 pr-4 text-indigo-400">2024</td>
+                        <td className="py-3.5 pr-4 text-indigo-400">2026</td>
                         <td className="py-3.5 pr-4 text-white font-medium">360° Rotunda 3D Experience</td>
                         <td className="py-3.5 pr-4 text-slate-400">Three.js Cylindrical Walkthrough & PBR</td>
                         <td className="py-3.5 text-indigo-300">22 Mounted Lab Exhibits</td>
                       </tr>
                       <tr>
-                        <td className="py-3.5 pr-4 text-indigo-400">2024</td>
+                        <td className="py-3.5 pr-4 text-indigo-400">2026</td>
                         <td className="py-3.5 pr-4 text-white font-medium">Chaos Emulation Suite</td>
                         <td className="py-3.5 pr-4 text-slate-400">Fault Injection & Self-Healing Testing</td>
                         <td className="py-3.5 text-slate-300">99.98% Resilience Score</td>
                       </tr>
                       <tr>
-                        <td className="py-3.5 pr-4 text-indigo-400">2024</td>
+                        <td className="py-3.5 pr-4 text-indigo-400">2026</td>
                         <td className="py-3.5 pr-4 text-white font-medium">Carter Ogunsola Developer HUD</td>
                         <td className="py-3.5 pr-4 text-slate-400">Tactile Micro-Grid, Live Metrics & Diagnostics</td>
                         <td className="py-3.5 text-emerald-400">Fluid Bezier Rollout Overlay</td>
@@ -714,7 +714,7 @@ export const AboutOverlay: React.FC<AboutOverlayProps> = ({
           <footer className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400 pb-12">
             <div className="flex items-center space-x-3">
               <span className="text-white font-medium">BOB LABS IoT</span>
-              <span>© 2024 BITS2WAVE HACKATHON · ALL RIGHTS RESERVED</span>
+              <span>© 2026 BITS2WAVE HACKATHON · ALL RIGHTS RESERVED</span>
             </div>
 
             <div className="flex items-center space-x-3">

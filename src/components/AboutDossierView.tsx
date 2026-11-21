@@ -213,7 +213,7 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded bg-indigo-500/15 border border-indigo-500/30 text-indigo-400 text-[11px] font-mono uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-                <span>BITS2WAVE HACKATHON 2024</span>
+                <span>BITS2WAVE HACKATHON 2026</span>
               </span>
               <span className="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-mono uppercase tracking-wider">
                 TEAM AURA 999+
@@ -359,7 +359,7 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
           SECTION 3: QUICK LAUNCH BUTTONS
          ========================================================================= */}
       <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-white/10 text-xs font-mono">
-        <div className={textMuted}>BOB LABS IoT • BITS2WAVE HACKATHON 2024</div>
+        <div className={textMuted}>BOB LABS IoT • BITS2WAVE HACKATHON 2026</div>
         <div className="flex items-center space-x-3">
           <button
             onClick={onOpenRotunda}
@@ -453,7 +453,7 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
                       engine puts firmware through deterministic chaos.
                     </p>
                     <p>
-                      Forged at the <b>BITS2WAVE National IoT Hackathon 2024</b> by <b>Team AURA 999+</b>{' '}
+                      Forged at the <b>BITS2WAVE National IoT Hackathon 2026</b> by <b>Team AURA 999+</b>{' '}
                       (IEEE BMSIT Student Branch Chapter), BOB Labs proves that distributed hardware
                       resilience can be verified in software before the first silicon chip is soldered.
                     </p>
@@ -476,7 +476,7 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
                       Where the work has been.
                     </h2>
                     <p className={`text-xs font-mono mt-1 ${textMuted}`}>
-                      TRACK RECORD: 2024–PRESENT • STRUCTURED DATA RECORD
+                      TRACK RECORD: 2026–PRESENT • STRUCTURED DATA RECORD
                     </p>
                   </div>
 
@@ -494,7 +494,7 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
                         className={`divide-y divide-slate-200 dark:divide-white/5 ${textSecondary}`}
                       >
                         <tr className="hover:bg-indigo-500/5 transition-colors">
-                          <td className="py-3.5 pr-4 text-indigo-400 font-semibold">2024</td>
+                          <td className="py-3.5 pr-4 text-indigo-400 font-semibold">2026</td>
                           <td className={`py-3.5 pr-4 font-medium ${textPrimary}`}>
                             BITS2WAVE Hackathon
                           </td>
@@ -502,7 +502,7 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
                           <td className="py-3.5 text-emerald-500 font-semibold">Championship</td>
                         </tr>
                         <tr className="hover:bg-indigo-500/5 transition-colors">
-                          <td className="py-3.5 pr-4 text-indigo-400 font-semibold">2024</td>
+                          <td className="py-3.5 pr-4 text-indigo-400 font-semibold">2026</td>
                           <td className={`py-3.5 pr-4 font-medium ${textPrimary}`}>
                             360° Rotunda 3D Experience
                           </td>
@@ -510,7 +510,7 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
                           <td className="py-3.5 text-indigo-400">22 Mounted Exhibits</td>
                         </tr>
                         <tr className="hover:bg-indigo-500/5 transition-colors">
-                          <td className="py-3.5 pr-4 text-indigo-400 font-semibold">2024</td>
+                          <td className="py-3.5 pr-4 text-indigo-400 font-semibold">2026</td>
                           <td className={`py-3.5 pr-4 font-medium ${textPrimary}`}>
                             Chaos Emulation Suite
                           </td>
@@ -518,7 +518,7 @@ export const AboutDossierView: React.FC<AboutDossierViewProps> = ({
                           <td className="py-3.5 text-emerald-500">99.98% Resilience</td>
                         </tr>
                         <tr className="hover:bg-indigo-500/5 transition-colors">
-                          <td className="py-3.5 pr-4 text-indigo-400 font-semibold">2024</td>
+                          <td className="py-3.5 pr-4 text-indigo-400 font-semibold">2026</td>
                           <td className={`py-3.5 pr-4 font-medium ${textPrimary}`}>
                             Carter Ogunsola Developer HUD
                           </td>
